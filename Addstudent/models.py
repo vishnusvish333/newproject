@@ -31,13 +31,18 @@ class AddStudent(models.Model):
 
     def __str__(self):
         return self.Student
+    
+class staff(models.Model):
+    staff = models.CharField(max_length=20)
+    def __str__(self):
+        return self.staff
 
 
 
 class student_call_status(models.Model):
     student_call_status=models.ForeignKey(AddStudent,on_delete=models.CASCADE)
     Next_FollowUp_Date=models.DateTimeField()
-    To_staff=models.BooleanField()
+    To_staff=models.ForeignKey(staff,on_delete=models.CASCADE)
     Comment=models.CharField(max_length=200)
     
 
@@ -107,10 +112,7 @@ class MapStudent(models.Model):
     Batch = models.ForeignKey(Batch,on_delete=models.CASCADE)
     
 
-class staff(models.Model):
-    staff = models.CharField(max_length=20)
-    def __str__(self):
-        return self.staff
+
 
 
 

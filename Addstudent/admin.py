@@ -46,5 +46,5 @@ class MapStudent_admin(admin.ModelAdmin):
 admin.site.register(MapStudent,MapStudent_admin)
 
 class staff_admin(admin.ModelAdmin):
-    list_display=('staff')
-admin.site.register=(staff,staff_admin)
+    list_display=('staff',)
+admin.site.register(staff,staff_admin)
